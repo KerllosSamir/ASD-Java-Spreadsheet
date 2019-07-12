@@ -1,5 +1,7 @@
 package edu.mum.asd.spreadsheet;
 
+import java.util.List;
+
 public abstract class Operation {
     private String name="";
 
@@ -11,4 +13,7 @@ public abstract class Operation {
     }
 
     public abstract String apply(Element left,Element right);
+    
+    public abstract String applyOnList(List<Element> operands);
+    
 }

@@ -1,22 +1,17 @@
 package edu.mum.asd.spreadsheet;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class Test {
 
     public static void main(String args[]){
 
-
-
         SpreadSheet spreadSheet=new SpreadSheet("Test");
 
         CreateDefaultSpreadSheet(spreadSheet);
 
-        spreadSheet.displaySpreadSheet();
-        spreadSheet.examineSpreadSheet();
-
-        System.out.println("-------------------------------------------------------------------------------------");
-        System.out.println("");
         CellPosition cp2=new CellPosition(0,0);
 
 
@@ -25,12 +20,6 @@ public class Test {
         Cell c1=new Cell(cp2,fixedValue1);
 
         spreadSheet.insertOrUpdateCell(c1);
-
-        spreadSheet.displaySpreadSheet();
-        spreadSheet.examineSpreadSheet();
-        System.out.println("-------------------------------------------------------------------------------------");
-        System.out.println("");
-
 
         Operation operation1=new AddOperation();
         Operation operation2=new SubOperation();
@@ -46,13 +35,6 @@ public class Test {
 
         Cell c2=new Cell(cp1,exp2);
 
-        spreadSheet.insertOrUpdateCell(c2);
-        spreadSheet.displaySpreadSheet();
-        spreadSheet.examineSpreadSheet();
-        System.out.println("-------------------------------------------------------------------------------------");
-        System.out.println("");
-
-
         CellPosition cp3=new CellPosition(6,6);
         Cell c3=new Cell(cp3,e3);
 
@@ -62,6 +44,22 @@ public class Test {
         System.out.println("-------------------------------------------------------------------------------------");
         System.out.println("");
 
+        
+        System.out.println("-------------------------------------------------------------------------------------");
+        System.out.println("");
+
+        FixedValue fixedValue3=new FixedValue("222");
+        Cell c4=new Cell(cp2,fixedValue1);
+        Element e =new ReferenceCell(c4);
+        Expression multiExp=new Expression(fixedValue1,e, operation1,fixedValue1,fixedValue1,fixedValue1,fixedValue1);
+        c3=new Cell(cp3,multiExp);
+        spreadSheet.insertOrUpdateCell(c3);
+        spreadSheet.displaySpreadSheet();
+        spreadSheet.examineSpreadSheet();
+        System.out.println("-------------------------------------------------------------------------------------");
+        System.out.println("");
+
+        
     }
 
     public static void CreateDefaultSpreadSheet(SpreadSheet spreadSheet) {

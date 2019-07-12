@@ -1,5 +1,7 @@
 package edu.mum.asd.spreadsheet;
 
+import java.util.List;
+
 public class MultiOperation extends Operation {
 
 
@@ -11,4 +13,15 @@ public class MultiOperation extends Operation {
         double results=Double.valueOf(left.evaluate())*Double.valueOf(right.evaluate());
         return String.valueOf(results);
     }
+
+	@Override
+	public String applyOnList(List<Element> operands) {
+		double results=0;
+		
+		for(int i=0;i<operands.size();i++) {
+			results*=Double.valueOf(operands.get(i).evaluate());
+		}
+		
+		return String.valueOf(results);
+	}
 }
