@@ -16,9 +16,9 @@ public class DivideOperation extends Operation {
 
     @Override
 	public String applyOnList(List<Element> operands) {
-		double results=0;
+		double results=Double.valueOf(operands.get(0).evaluate());
 		
-		for(int i=0;i<operands.size();i++) {
+		for(int i=1;i<operands.size();i++) {
 			results/=Double.valueOf(operands.get(i).evaluate());
 		}
 		

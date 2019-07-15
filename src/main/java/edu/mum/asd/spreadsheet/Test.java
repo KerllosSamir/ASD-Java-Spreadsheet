@@ -17,7 +17,7 @@ public class Test {
 
         CellPosition cp1=new CellPosition(2,4);
         FixedValue fixedValue1=new FixedValue("555");
-        Cell c1=new Cell(cp2,fixedValue1);
+        Cell c1=new Cell(cp2,"1+2+3+4*5/2");
 
         spreadSheet.insertOrUpdateCell(c1);
 

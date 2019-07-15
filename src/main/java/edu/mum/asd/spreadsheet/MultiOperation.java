@@ -16,7 +16,7 @@ public class MultiOperation extends Operation {
 
 	@Override
 	public String applyOnList(List<Element> operands) {
-		double results=0;
+		double results=1;
 		
 		for(int i=0;i<operands.size();i++) {
 			results*=Double.valueOf(operands.get(i).evaluate());
